@@ -23,6 +23,9 @@ export function Footer() {
             <span>Explorer ({defaultTargetChain.blockExplorers?.default.name})</span>
             <ExternalLink className="w-3 h-3" />
           </a>
+          <Link href="/whitepaper" className="hover:text-blue-600 transition-colors">
+            Whitepaper
+          </Link>
           <a
             href="https://rpc.bohr.life"
             target="_blank"

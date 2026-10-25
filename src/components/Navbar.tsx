@@ -36,6 +36,9 @@ export function Navbar() {
             <Link href="/deep-scan" className="hover:text-blue-600 transition-colors">
               Deep Scan
             </Link>
+            <Link href="/whitepaper" className="hover:text-blue-600 transition-colors">
+              Whitepaper
+            </Link>
             <Link href="/about" className="hover:text-blue-600 transition-colors">
               How It Works
             </Link>

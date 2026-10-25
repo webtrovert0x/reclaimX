@@ -1,8 +1,20 @@
-# ReclaimX — Smart Contract Discovery & Recovery on BOT Chain
+<div align="center">
+  <img src="./public/logo.png" width="180" alt="ReclaimX Logo" style="border-radius: 16px; margin-bottom: 16px;" />
 
-> **Tagline:** *Find your contracts. Discover your funds. Reclaim what’s recoverable.*
+  # ReclaimX — Smart Contract Discovery & Recovery on BOT Chain
 
-ReclaimX is a non-custodial smart contract discovery and recovery dApp built specifically for **BOT Chain** (Bohr Testnet Chain ID `968` / BOT Chain Mainnet Chain ID `677`). It allows developers and Web3 users to index contracts they deployed, inspect active bytecode, detect EIP-1967/EIP-1822 proxies, review native BOT and ERC-20 balances, simulate withdrawal methods via pre-flight call dry-runs, and execute direct recoveries from their connected wallet.
+  **Find your contracts. Discover your funds. Reclaim what’s recoverable.**
+
+  [![Whitepaper](https://img.shields.io/badge/Whitepaper-v1.0.0-blue?style=flat-square)](./WHITEPAPER.md)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+  [![Network: BOT Chain Testnet](https://img.shields.io/badge/Network-Bohr%20Testnet%20(968)-0284c7?style=flat-square)](https://scan.bohr.life)
+  [![Contract Verified Match](https://img.shields.io/badge/Contract-0x8baf...cba1-1e40af?style=flat-square)](https://scan.bohr.life/address/0x8baf11bb2f5c35d81fd21cd40eae0c205113cba1)
+
+</div>
+
+ReclaimX is a non-custodial smart contract discovery and asset recovery protocol engineered specifically for **BOT Chain** (Bohr Testnet Chain ID `968` / BOT Chain Mainnet Chain ID `677`). It enables developers, campaign managers, and Web3 users to index contracts they deployed, inspect active bytecode, resolve EIP-1967/EIP-1822 proxies, review native BOT and ERC-20 balances, simulate withdrawal methods via pre-flight call dry-runs (`eth_call`), decode custom errors and campaign timelocks, and execute direct recoveries from their connected wallet.
+
+📖 **For detailed protocol mechanics, security invariants, and empirical case studies, read the [Official ReclaimX Whitepaper](./WHITEPAPER.md).**
 
 ---
 
@@ -163,20 +175,33 @@ Update `NEXT_PUBLIC_CONTRACT_RECOVERY_HUB_ADDRESS` in `.env.local` with the new 
 
 ## 6. Verifying the Contract on the Explorer
 
-BohrScan and BOTScan support standard Blockscout contract verification.
+### Option A: Via Command Line (Recommended)
+Run the automated verification script:
+```bash
+npm run verify
+```
 
-1. **Flatten the contract source:**
-   ```bash
-   forge flatten contracts/ContractRecoveryHub.sol > ContractRecoveryHub_flat.sol
+Or run the direct Foundry verification command:
+```bash
+forge verify-contract 0x8baf11bb2f5c35d81fd21cd40eae0c205113cba1 \
+  contracts/ContractRecoveryHub.sol:ContractRecoveryHub \
+  --verifier blockscout \
+  --verifier-url https://scan.bohr.life/api \
+  --compiler-version v0.8.20+commit.a1b79de6 \
+  --constructor-args 000000000000000000000000f39fd6e51aad88f6f4ce6ab8827279cfffb9226600000000000000000000000000000000000000000000000000b1a2bc2ec50000 \
+  --watch
+```
+
+### Option B: Via BohrScan Web UI
+If BohrScan requires account login:
+1. Go to: [`https://scan.bohr.life/address/0x8baf11bb2f5c35d81fd21cd40eae0c205113cba1/contract_verifications/new`](https://scan.bohr.life/address/0x8baf11bb2f5c35d81fd21cd40eae0c205113cba1/contract_verifications/new)
+2. Select **Solidity (Single file)** or **Solidity (Standard-Json-Input)**.
+3. Upload `contracts/ContractRecoveryHubFlat.sol` or `standard_json_input.json`.
+4. Set Compiler: `v0.8.20+commit.a1b79de6`.
+5. Constructor Arguments:
    ```
-
-2. **Verify via Explorer Web UI:**
-   * Navigate to [`https://scan.bohr.life/address/0x8baf11bb2f5c35d81fd21cd40eae0c205113cba1/contract_verifications/new`](https://scan.bohr.life/address/0x8baf11bb2f5c35d81fd21cd40eae0c205113cba1/contract_verifications/new)
-   * Compiler version: `v0.8.20+commit.a1b79de6`
-   * Open Source License: `MIT`
-   * Optimization: `No` (or `Yes` with `200` runs matching foundry.toml)
-   * Upload `ContractRecoveryHub_flat.sol` or standard JSON input from `out/ContractRecoveryHub.sol/ContractRecoveryHub.json`.
-   * Constructor arguments: ABI-encoded deployer address and initial price in wei.
+   000000000000000000000000f39fd6e51aad88f6f4ce6ab8827279cfffb9226600000000000000000000000000000000000000000000000000b1a2bc2ec50000
+   ```
 
 ---
 

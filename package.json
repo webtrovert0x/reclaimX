@@ -10,7 +10,8 @@
     "test:sol": "forge test -vvv",
     "test:backend": "node --import tsx --test test/backend/backend.test.ts",
     "test": "npm run test:sol && npm run test:backend",
-    "deploy:testnet": "forge script script/DeployHub.s.sol:DeployHubScript --rpc-url https://rpc.bohr.life --broadcast"
+    "deploy:testnet": "forge script script/DeployHub.s.sol:DeployHubScript --rpc-url https://rpc.bohr.life --broadcast",
+    "verify": "forge verify-contract 0x8baf11bb2f5c35d81fd21cd40eae0c205113cba1 contracts/ContractRecoveryHub.sol:ContractRecoveryHub --verifier blockscout --verifier-url https://scan.bohr.life/api --compiler-version v0.8.20+commit.a1b79de6 --constructor-args 000000000000000000000000f39fd6e51aad88f6f4ce6ab8827279cfffb9226600000000000000000000000000000000000000000000000000b1a2bc2ec50000"
   },
   "dependencies": {
     "@openzeppelin/contracts": "^5.6.1",
