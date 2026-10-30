@@ -42,7 +42,7 @@ export function RecoveryModal({
 
   if (!isOpen) return null;
 
-  const explorerUrl = defaultTargetChain.blockExplorers?.default.url || 'https://scan.bohr.life';
+  const explorerUrl = defaultTargetChain.blockExplorers?.default.url || 'https://scan.botchain.ai';
 
   // Resolve callData either from method candidate or by encoding signature
   let resolvedCallData = method.callData;

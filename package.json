@@ -3,15 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "next dev --webpack",
+    "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint",
     "test:sol": "forge test -vvv",
     "test:backend": "node --import tsx --test test/backend/backend.test.ts",
     "test": "npm run test:sol && npm run test:backend",
     "deploy:testnet": "forge script script/DeployHub.s.sol:DeployHubScript --rpc-url https://rpc.bohr.life --broadcast",
-    "verify": "forge verify-contract 0x8baf11bb2f5c35d81fd21cd40eae0c205113cba1 contracts/ContractRecoveryHub.sol:ContractRecoveryHub --verifier blockscout --verifier-url https://scan.bohr.life/api --compiler-version v0.8.20+commit.a1b79de6 --constructor-args 000000000000000000000000f39fd6e51aad88f6f4ce6ab8827279cfffb9226600000000000000000000000000000000000000000000000000b1a2bc2ec50000"
+    "deploy:mainnet": "forge script script/DeployHub.s.sol:DeployHubScript --rpc-url https://rpc.botchain.ai --broadcast --with-gas-price 20gwei",
+    "verify": "forge verify-contract 0x7feDd4981CF2448366c3de1099B43823D4Deac13 contracts/ContractRecoveryHub.sol:ContractRecoveryHub --verifier blockscout --verifier-url https://scan.botchain.ai/api --compiler-version v0.8.20+commit.a1b79de6 --constructor-args 00000000000000000000000055da37abbf8c9141ada4dd1c2ef7211c0483ec1600000000000000000000000000000000000000000000000000b1a2bc2ec50000"
   },
   "dependencies": {
     "@openzeppelin/contracts": "^5.6.1",

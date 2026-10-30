@@ -7,24 +7,26 @@
 
   [![Whitepaper](https://img.shields.io/badge/Whitepaper-v1.0.0-blue?style=flat-square)](./WHITEPAPER.md)
   [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](https://opensource.org/licenses/MIT)
-  [![Network: BOT Chain Testnet](https://img.shields.io/badge/Network-Bohr%20Testnet%20(968)-0284c7?style=flat-square)](https://scan.bohr.life)
-  [![Contract Verified Match](https://img.shields.io/badge/Contract-0x8baf...cba1-1e40af?style=flat-square)](https://scan.bohr.life/address/0x8baf11bb2f5c35d81fd21cd40eae0c205113cba1)
+  [![Network: BOT Chain Mainnet](https://img.shields.io/badge/Network-BOT%20Chain%20Mainnet%20(677)-0284c7?style=flat-square)](https://scan.botchain.ai)
+  [![Contract Verified Match](https://img.shields.io/badge/Contract-0x7feD...ac13-1e40af?style=flat-square)](https://scan.botchain.ai/address/0x7fedd4981cf2448366c3de1099b43823d4deac13)
 
 </div>
 
-ReclaimX is a non-custodial smart contract discovery and asset recovery protocol engineered specifically for **BOT Chain** (Bohr Testnet Chain ID `968` / BOT Chain Mainnet Chain ID `677`). It enables developers, campaign managers, and Web3 users to index contracts they deployed, inspect active bytecode, resolve EIP-1967/EIP-1822 proxies, review native BOT and ERC-20 balances, simulate withdrawal methods via pre-flight call dry-runs (`eth_call`), decode custom errors and campaign timelocks, and execute direct recoveries from their connected wallet.
+ReclaimX is a non-custodial smart contract discovery and asset recovery protocol engineered specifically for **BOT Chain** (BOT Chain Mainnet Chain ID `677` / Bohr Testnet Chain ID `968`). It enables developers, campaign managers, and Web3 users to index contracts they deployed, inspect active bytecode, resolve EIP-1967/EIP-1822 proxies, review native BOT and ERC-20 balances, simulate withdrawal methods via pre-flight call dry-runs (`eth_call`), decode custom errors and campaign timelocks, and execute direct recoveries from their connected wallet.
 
 📖 **For detailed protocol mechanics, security invariants, and empirical case studies, read the [Official ReclaimX Whitepaper](./WHITEPAPER.md).**
 
 ---
 
-## Live Deployed Smart Contract (BOT Chain Bohr Testnet)
+## Live Deployed Smart Contract (BOT Chain Mainnet)
 
-* **Contract Address:** [`0x8baf11bb2f5c35d81fd21cd40eae0c205113cba1`](https://scan.bohr.life/address/0x8baf11bb2f5c35d81fd21cd40eae0c205113cba1)
-* **Deployment Transaction:** [`0xcaf3cfb87836f32684e2dec3644129dfeefc38bb38901ed01c88e0e106a99421`](https://scan.bohr.life/tx/0xcaf3cfb87836f32684e2dec3644129dfeefc38bb38901ed01c88e0e106a99421)
-* **Network:** Bohr Testnet (Chain ID `968`)
-* **RPC Endpoint:** `https://rpc.bohr.life`
-* **Block Explorer:** [https://scan.bohr.life](https://scan.bohr.life)
+* **Contract Address:** [`0x7feDd4981CF2448366c3de1099B43823D4Deac13`](https://scan.botchain.ai/address/0x7fedd4981cf2448366c3de1099b43823d4deac13)
+* **Deployment Transaction:** [`0x3c359c7a76ef9968d47f73bab094715d9ca0b435c6df61a7d62fa1bfb9f86678`](https://scan.botchain.ai/tx/0x3c359c7a76ef9968d47f73bab094715d9ca0b435c6df61a7d62fa1bfb9f86678)
+* **Network:** BOT Chain Mainnet (Chain ID `677`)
+* **Native Token:** `BOT`
+* **RPC Endpoint:** `https://rpc.botchain.ai`
+* **Block Explorer:** [https://scan.botchain.ai](https://scan.botchain.ai)
+* **Contract Verification:** **Pass - Verified** on BOTScan
 * **Initial Deep Scan Price:** `0.05 BOT`
 
 ---
@@ -132,14 +134,15 @@ REOWN_PROJECT_ID=your_reown_project_id
 
 # BOT Chain Network Configuration
 NEXT_PUBLIC_CHAIN_ID=968
-NEXT_PUBLIC_RPC_URL=https://rpc.bohr.life
-NEXT_PUBLIC_CHAIN_NAME="BOT Chain Testnet"
+NEXT_PUBLIC_CHAIN_ID=677
+NEXT_PUBLIC_RPC_URL=https://rpc.botchain.ai
+NEXT_PUBLIC_CHAIN_NAME="BOT Chain Mainnet"
 NEXT_PUBLIC_NATIVE_CURRENCY_SYMBOL=BOT
-NEXT_PUBLIC_EXPLORER_URL=https://scan.bohr.life
-NEXT_PUBLIC_EXPLORER_API_URL=https://scan.bohr.life/api
+NEXT_PUBLIC_EXPLORER_URL=https://scan.botchain.ai
+NEXT_PUBLIC_EXPLORER_API_URL=https://scan.botchain.ai/api
 
 # Deployed Contract Address
-NEXT_PUBLIC_CONTRACT_RECOVERY_HUB_ADDRESS=0x8baf11bb2f5c35d81fd21cd40eae0c205113cba1
+NEXT_PUBLIC_CONTRACT_RECOVERY_HUB_ADDRESS=0x7feDd4981CF2448366c3de1099B43823D4Deac13
 
 # Deployer Private Key (For foundry deploy scripts only)
 DEPLOYER_PRIVATE_KEY=your_private_key_here
@@ -183,12 +186,12 @@ npm run verify
 
 Or run the direct Foundry verification command:
 ```bash
-forge verify-contract 0x8baf11bb2f5c35d81fd21cd40eae0c205113cba1 \
+forge verify-contract 0x7feDd4981CF2448366c3de1099B43823D4Deac13 \
   contracts/ContractRecoveryHub.sol:ContractRecoveryHub \
   --verifier blockscout \
-  --verifier-url https://scan.bohr.life/api \
+  --verifier-url https://scan.botchain.ai/api \
   --compiler-version v0.8.20+commit.a1b79de6 \
-  --constructor-args 000000000000000000000000f39fd6e51aad88f6f4ce6ab8827279cfffb9226600000000000000000000000000000000000000000000000000b1a2bc2ec50000 \
+  --constructor-args 00000000000000000000000055da37abbf8c9141ada4dd1c2ef7211c0483ec1600000000000000000000000000000000000000000000000000b1a2bc2ec50000 \
   --watch
 ```
 

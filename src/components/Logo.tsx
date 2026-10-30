@@ -4,6 +4,8 @@ export function Logo({ className = 'w-8 h-8' }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 128 128"
+      width="32"
+      height="32"
       className={className}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

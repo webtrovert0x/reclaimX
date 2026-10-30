@@ -151,7 +151,7 @@ export function ScanModal({
     }
   };
 
-  const explorerUrl = defaultTargetChain.blockExplorers?.default.url || 'https://scan.bohr.life';
+  const explorerUrl = defaultTargetChain.blockExplorers?.default.url || 'https://scan.botchain.ai';
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/40 p-4">

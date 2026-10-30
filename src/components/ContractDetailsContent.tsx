@@ -35,7 +35,7 @@ export function ContractDetailsContent({ address: addressParam }: ContractDetail
   const [isRecoveryModalOpen, setIsRecoveryModalOpen] = useState(false);
   const [selectedMethod, setSelectedMethod] = useState<RecoveryMethodCandidate | null>(null);
 
-  const explorerUrl = defaultTargetChain.blockExplorers?.default.url || 'https://scan.bohr.life';
+  const explorerUrl = defaultTargetChain.blockExplorers?.default.url || 'https://scan.botchain.ai';
 
   useEffect(() => {
     if (!addressParam) return;

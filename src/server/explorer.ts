@@ -4,7 +4,7 @@ import { analyzeContractRecovery } from './recoveryEngine';
 import { ContractRecord } from './types';
 
 const EXPLORER_API_URL =
-  process.env.NEXT_PUBLIC_EXPLORER_API_URL || 'https://scan.bohr.life/api';
+  process.env.NEXT_PUBLIC_EXPLORER_API_URL || 'https://scan.botchain.ai/api';
 const API_KEY = process.env.EXPLORER_API_KEY || '';
 
 interface ExplorerTx {

@@ -87,7 +87,7 @@ export default function HomePage() {
     fetchUserScans();
   }, [address]);
 
-  const explorerUrl = defaultTargetChain.blockExplorers?.default.url || 'https://scan.bohr.life';
+  const explorerUrl = defaultTargetChain.blockExplorers?.default.url || 'https://scan.botchain.ai';
 
   // Contracts list filtering
   const contracts = activeJob?.contracts || [];

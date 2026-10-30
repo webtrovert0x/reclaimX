@@ -43,9 +43,9 @@ export default function WhitepaperPage() {
             Decentralized, Non-Custodial Smart Contract Discovery and Asset Recovery Protocol on BOT Chain
           </p>
           <div className="text-xs text-slate-500 pt-2 flex flex-wrap items-center justify-center gap-4">
-            <span><strong>Network:</strong> BOT Chain (Bohr Testnet 968 / Mainnet 677)</span>
+            <span><strong>Network:</strong> BOT Chain (Mainnet 677 / Testnet 968)</span>
             <span>•</span>
-            <span><strong>Hub Contract:</strong> <code className="bg-slate-100 px-1.5 py-0.5 rounded text-blue-700">0x8baf...cba1</code></span>
+            <span><strong>Hub Contract:</strong> <code className="bg-slate-100 px-1.5 py-0.5 rounded text-blue-700">0x7feDd4981CF2448366c3de1099B43823D4Deac13</code></span>
           </div>
         </div>
 

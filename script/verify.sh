@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 set -e
 
-CONTRACT_ADDRESS="0x8baf11bb2f5c35d81fd21cd40eae0c205113cba1"
-CONSTRUCTOR_ARGS="000000000000000000000000f39fd6e51aad88f6f4ce6ab8827279cfffb9226600000000000000000000000000000000000000000000000000b1a2bc2ec50000"
-EXPLORER_API="https://scan.bohr.life/api"
+CONTRACT_ADDRESS="${1:-0x7feDd4981CF2448366c3de1099B43823D4Deac13}"
+CONSTRUCTOR_ARGS="00000000000000000000000055da37abbf8c9141ada4dd1c2ef7211c0483ec1600000000000000000000000000000000000000000000000000b1a2bc2ec50000"
+EXPLORER_API="${2:-https://scan.botchain.ai/api}"
 
-echo "Verifying ContractRecoveryHub on BohrScan..."
+echo "Verifying ContractRecoveryHub on BOTScan (BOT Chain Mainnet)..."
 echo "Contract: $CONTRACT_ADDRESS"
 
 forge verify-contract "$CONTRACT_ADDRESS" contracts/ContractRecoveryHub.sol:ContractRecoveryHub \

@@ -25,7 +25,7 @@ export function Web3Provider({ children, projectId }: Web3ProviderProps) {
         name: 'ReclaimX',
         description: 'Smart Contract Recovery on BOT Chain',
         url: 'https://reclaimx.botchain.ai',
-        icons: ['https://scan.bohr.life/assets/configs/network_icon.png'],
+        icons: ['https://scan.botchain.ai/assets/favicon/favicon-32x32.png'],
       },
       features: {
         analytics: false,
